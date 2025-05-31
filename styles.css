@@ -1,0 +1,205 @@
+body {
+    background: rgba(255, 102, 179, 0.4);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+  position: relative;
+  height: 350px;
+  width: 93%;
+  background: rgb(0,128,192);
+  border: 5px solid gray;
+  border-top-left-radius: 35%;
+  border-top-right-radius: 35%;
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  padding: 45px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile image on top center */
+header::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background-image: url('Producto1.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 8px solid gray;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Header text styling */
+h1 {
+  font-size: 64px;
+  color: lightblue;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.main {
+    width: 95%;
+    background: rgba(207, 85, 253, 0.4);
+    margin: 30px auto;
+    border: 4px solid darkgray;
+    padding-bottom: 50px;
+}
+
+.box-container,
+.box-container1,
+.box-container2 {
+    width: 95%;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.box-container { background: purple; border: 4px solid gray; }
+.box-container1 { background: lightblue; border: 4px solid blue; }
+.box-container2 { background: #294ee0; border: 4px solid blue; }
+
+.box-image {
+    width: 45%;
+    min-height: 360px;
+    padding: 40px;
+    border: 4px solid white;
+    border-radius: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease forwards;
+    transition: all 0.4s ease;
+    background: gray;
+}
+
+.box-image.clicked {
+    transform: scale(1.02);
+}
+
+.box-orange { background: orange; }
+.box-blue   { background: blue; border-color: white; }
+.box-red    { background: red; border-color: black; }
+.box-violet { background: violet; border-color: black; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box-container .box-image:nth-child(1) { animation-delay: 0.2s; }
+.box-container .box-image:nth-child(2) { animation-delay: 0.4s; }
+.box-container1 .box-image:nth-child(1) { animation-delay: 0.2s; }
+.box-container1 .box-image:nth-child(2) { animation-delay: 0.4s; }
+.box-container2 .box-image:nth-child(1) { animation-delay: 0.2s; }
+.box-container2 .box-image:nth-child(2) { animation-delay: 0.4s; }
+
+.imagebox {
+    width: 230px;
+    height: 230px;
+    border: 8px solid gray;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagebox:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-text {
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.text-description {
+    margin-top: 15px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+footer {
+    height: 150px;
+    width: 95%;
+    background: rgb(44, 125, 224);
+    padding: 30px;
+    border: 5px solid gray;
+    border-radius: 65px;
+    margin: 30px auto;
+    text-align : center;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .box-container,
+    .box-container1,
+    .box-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-image {
+        width: 80%;
+        border-radius: 30px;
+        margin: 20px 0;
+    }
+
+    .imagebox {
+        width: 150px;
+        height: 150px;
+    }
+
+    header {
+        height: auto;
+        border-radius: 0 0 45px 45px;
+    }
+
+    footer {
+        height: auto;
+        border-radius: 30px;
+    }
+
+    h2{
+     font-size : 45px;
+     color : lightblue;
+    }
+}
