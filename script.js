@@ -7,8 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
           const key = "image" + (index + 1);
           const description = data[key] || "No description available.";
           const textDiv = img.parentElement.querySelector(".text-description");
-          textDiv.textContent = description;
-          textDiv.style.display = "block";
+
+          if (!textDiv) {
+            console.warn("No .text-description div found for", key);
+            return;
+          }
+
+          const isVisible = textDiv.style.display === "block";
+          textDiv.style.display = isVisible ? "none" : "block";
+          if (!isVisible) {
+            textDiv.textContent = description;
+          }
         });
       });
     })
