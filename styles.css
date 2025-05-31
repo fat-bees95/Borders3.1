@@ -32,7 +32,7 @@ header::before {
   transform: translateX(-50%);
   width: 120px;
   height: 120px;
-  background-image: url('Producto1.jpg');
+  background-image: url('producto1.jpg');
   background-size: cover;
   background-position: center;
   border: 8px solid gray;
